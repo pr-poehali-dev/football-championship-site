@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
+  const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState('home');
 
   const menuItems = [
@@ -12,6 +14,7 @@ const Index = () => {
     { id: 'matches', label: 'Матчи', icon: 'Calendar' },
     { id: 'news', label: 'Новости', icon: 'Newspaper' },
     { id: 'standings', label: 'Турнирная таблица', icon: 'Trophy' },
+    { id: 'divisions', label: 'Дивизионы', icon: 'Shield' },
     { id: 'teams', label: 'Команды', icon: 'Users' },
   ];
 
@@ -100,7 +103,13 @@ const Index = () => {
           {menuItems.map((item, index) => (
             <button
               key={item.id}
-              onClick={() => setActiveSection(item.id)}
+              onClick={() => {
+                if (item.id === 'divisions') {
+                  navigate('/divisions');
+                } else {
+                  setActiveSection(item.id);
+                }
+              }}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 ${
                 activeSection === item.id
                   ? 'bg-sidebar-accent text-sidebar-accent-foreground shadow-lg scale-105'
