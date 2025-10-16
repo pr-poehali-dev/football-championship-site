@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
+import Sidebar from '@/components/Sidebar';
 
 const Divisions = () => {
   const divisions = [
@@ -50,8 +51,10 @@ const Divisions = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-8">
-      <div className="max-w-7xl mx-auto space-y-8">
+    <>
+      <Sidebar />
+      <div className="ml-64 min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-8">
+        <div className="max-w-7xl mx-auto space-y-8">
         <div className="animate-fade-in">
           <div className="flex items-center gap-3 mb-2">
             <Icon name="Shield" size={36} className="text-primary" />
@@ -196,8 +199,9 @@ const Divisions = () => {
             </div>
           </CardContent>
         </Card>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
