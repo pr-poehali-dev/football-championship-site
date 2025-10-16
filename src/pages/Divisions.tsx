@@ -6,38 +6,47 @@ const Divisions = () => {
   const divisions = [
     {
       id: 1,
-      name: 'Премьер Дивизион',
-      level: 'Высший',
-      teams: 16,
+      name: 'U-15',
+      level: 'Возраст до 15 лет',
+      teams: 8,
       color: 'from-primary to-red-600',
       icon: 'Trophy',
-      topTeams: ['Зенит', 'Динамо', 'ЦСКА', 'Спартак'],
+      topTeams: ['Спартак', 'Динамо', 'Локомотив', 'Чертаново'],
     },
     {
       id: 2,
-      name: 'Первый Дивизион',
-      level: 'Первая лига',
-      teams: 18,
+      name: 'U-13',
+      level: 'Возраст до 13 лет',
+      teams: 10,
       color: 'from-secondary to-blue-600',
       icon: 'Medal',
-      topTeams: ['Торпедо', 'Сочи', 'Нижний Новгород', 'Балтика'],
+      topTeams: ['Торпедо', 'Спартак', 'Динамо', 'Чертаново'],
     },
     {
       id: 3,
-      name: 'Второй Дивизион',
-      level: 'Вторая лига',
-      teams: 20,
+      name: 'U-11',
+      level: 'Возраст до 11 лет',
+      teams: 12,
       color: 'from-accent to-yellow-600',
       icon: 'Award',
-      topTeams: ['Енисей', 'Чайка', 'Волга', 'Химки'],
+      topTeams: ['Чертаново', 'Динамо', 'Спартак', 'Строгино'],
+    },
+    {
+      id: 4,
+      name: 'U-9',
+      level: 'Возраст до 9 лет',
+      teams: 10,
+      color: 'from-green-500 to-emerald-600',
+      icon: 'Star',
+      topTeams: ['Динамо', 'Чертаново', 'Строгино', 'Спартак'],
     },
   ];
 
   const divisionStats = [
-    { label: 'Всего команд', value: '54', icon: 'Users' },
-    { label: 'Активных дивизионов', value: '3', icon: 'Shield' },
-    { label: 'Матчей за сезон', value: '486', icon: 'Calendar' },
-    { label: 'Путевок в еврокубки', value: '5', icon: 'Star' },
+    { label: 'Всего команд', value: '40', icon: 'Users' },
+    { label: 'Возрастных категорий', value: '4', icon: 'Shield' },
+    { label: 'Матчей за сезон', value: '280', icon: 'Calendar' },
+    { label: 'Юных футболистов', value: '600+', icon: 'Star' },
   ];
 
   return (
@@ -103,7 +112,7 @@ const Divisions = () => {
                   <div>
                     <h4 className="text-sm font-semibold text-muted-foreground mb-3 flex items-center gap-2">
                       <Icon name="TrendingUp" size={16} />
-                      Топ команды дивизиона
+                      Топ команды категории
                     </h4>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                       {division.topTeams.map((team, idx) => (
@@ -146,36 +155,42 @@ const Divisions = () => {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Icon name="Info" size={24} className="text-primary" />
-              Система повышения и понижения
+              Особенности возрастных категорий
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="space-y-2">
                 <div className="flex items-center gap-2 mb-3">
-                  <Icon name="ArrowUp" size={20} className="text-green-600" />
-                  <h4 className="font-bold">Повышение</h4>
+                  <Icon name="Clock" size={20} className="text-primary" />
+                  <h4 className="font-bold">Время матча</h4>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Топ-2 команды каждого дивизиона автоматически повышаются в следующий дивизион
+                  U-9/U-11: 2x20 мин<br />
+                  U-13: 2x25 мин<br />
+                  U-15: 2x30 мин
                 </p>
               </div>
               <div className="space-y-2">
                 <div className="flex items-center gap-2 mb-3">
-                  <Icon name="ArrowDown" size={20} className="text-red-600" />
-                  <h4 className="font-bold">Понижение</h4>
+                  <Icon name="Users" size={20} className="text-secondary" />
+                  <h4 className="font-bold">Состав</h4>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Последние 2 команды дивизиона переходят на уровень ниже по итогам сезона
+                  U-9: 7x7 игроков<br />
+                  U-11: 9x9 игроков<br />
+                  U-13/U-15: 11x11 игроков
                 </p>
               </div>
               <div className="space-y-2">
                 <div className="flex items-center gap-2 mb-3">
-                  <Icon name="Shuffle" size={20} className="text-primary" />
-                  <h4 className="font-bold">Стыковые матчи</h4>
+                  <Icon name="Target" size={20} className="text-accent" />
+                  <h4 className="font-bold">Размер поля</h4>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  Команды с 3-го по 5-е место играют стыковые матчи за право повышения
+                  U-9: мини-поле<br />
+                  U-11: половина поля<br />
+                  U-13/U-15: полное поле
                 </p>
               </div>
             </div>
