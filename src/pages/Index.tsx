@@ -93,8 +93,8 @@ const Index = () => {
               <Icon name="Trophy" size={28} className="text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold">FOOTBALL</h1>
-              <p className="text-xs text-sidebar-foreground/70">CHAMPIONSHIP</p>
+              <h1 className="text-sm font-bold leading-tight">Первенство по футболу</h1>
+              <p className="text-xs text-sidebar-foreground/70 leading-tight">САО (детско-юношеские)</p>
             </div>
           </div>
         </div>
@@ -144,7 +144,7 @@ const Index = () => {
                 <Badge className="mb-3 bg-primary border-0 text-white font-bold">
                   LIVE СЕЙЧАС
                 </Badge>
-                <h2 className="text-4xl font-bold mb-2">Футбольный Чемпионат 2025</h2>
+                <h2 className="text-4xl font-bold mb-2">Первенство по футболу среди детско-юношеских команд САО</h2>
                 <p className="text-lg text-white/90">
                   Следите за всеми матчами, новостями и событиями турнира
                 </p>

@@ -49,7 +49,7 @@ const Divisions = () => {
             <h1 className="text-4xl font-bold">Дивизионы</h1>
           </div>
           <p className="text-muted-foreground text-lg">
-            Структура футбольного чемпионата по уровням
+            Первенство по футболу среди детско-юношеских команд САО
           </p>
         </div>
 
